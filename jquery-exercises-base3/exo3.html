@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-2.2.4.js"></script>
+  <title>Exercice 1</title>
+</head>
+<body>
+  <button id="generate">Start the game</button>
+  <input id="random_value" type="hidden">
+  <div id="guess_section" style="display:none;">
+      <span id="guess_text">Guess the number</span>
+      <br/>
+      <input id="user_input" type="text"></input>
+      <button id="compare">Go</button>
+     </div>
+
+
+  <script>
+
+  $("#generate").click(function() {
+    $("#random_value").val(Math.floor(Math.random() * 100)+1);
+    $("#guess_text").html("Guess the number");
+    $("#guess_section").show();
+    });
+
+  var guesses = 0;
+
+  $("#compare").click(function() {
+    if (isNaN($("#user_input").val())) {
+        $("#guess_text").html("This is not a number");
+    } else if (parseInt($("#user_input").val()) < 1 || parseInt($("#user_input").val()) > 100) {
+        $("#guess_text").html("It should be between 1 and 100");
+    } else {
+          if(parseInt($("#user_input").val()) == $("#random_value").val()) {
+            guesses++;
+            $("#guess_text").html("Correct! "+guesses+" tentative(s)");
+          }
+          else if (parseInt($("#user_input").val()) < $("#random_value").val()) {
+            guesses++;
+            $("#guess_text").html("Nope, it's higher");
+            $("#user_input").val("");
+          }
+          else if (parseInt($("#user_input").val()) > $("#random_value").val()) {
+            guesses++;
+            $("#guess_text").html("Nope, it's lower");
+            $("#user_input").val("");
+          }
+        }
+    });
+
+  </script>
+</body>
+</html>

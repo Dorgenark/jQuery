@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-2.2.4.js"></script>
+  <title>Exercice 1</title>
+
+</head>
+<body>
+  <div style="margin-left: 200px; padding-bottom: 20px;">
+      <button id="haut" style="margin-left: 47px;">ᐃ</button><br />
+      <button id="gauche">ᐊ</button>
+      <button id="bas">ᐁ</button>
+      <button id="droite">ᐅ</button>
+  </div>
+  <div>
+      <canvas id="mon_canvas" width="900" height="600" style="border: 1px solid black"><p>Canvas isn't supported</p></canvas>
+  </div>
+
+
+
+  <script type="text/javascript">
+
+  window.onload = function() {
+    var c = document.getElementById('mon_canvas');
+    var ctx = c.getContext('2d');
+
+
+    ctx.rect(0,0,50,50);
+    ctx.fillStyle = "green";
+    ctx.fill();
+
+    var x, y;
+    var haut = 0;
+    var bas = 0;
+    var gauche = 0;
+    var droite = 0;
+
+        $("#haut").click(function(){
+          haut++;
+          c.width = c.width;
+          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.fillStyle = "green";
+          ctx.fill();
+          if (y < 0){
+            haut = 0;
+            bas = 11;
+            c.width = c.width;
+            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.fillStyle = "green";
+            ctx.fill();
+          };
+        });
+
+        $("#bas").click(function(){
+          bas++;
+          c.width = c.width;
+          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.fillStyle = "green";
+          ctx.fill();
+          if (y >= 600){
+            haut = 0;
+            bas = 0;
+            c.width = c.width;
+            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.fillStyle = "green";
+            ctx.fill();
+          };
+        });
+
+        $("#gauche").click(function(){
+          gauche++;
+          c.width = c.width;
+          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.fillStyle = "green";
+          ctx.fill();
+          if (x < 0){
+            gauche = 0;
+            droite = 17;
+            c.width = c.width;
+            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.fillStyle = "green";
+            ctx.fill();
+          };
+        });
+
+        $("#droite").click(function(){
+          droite++;
+          c.width = c.width;
+          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.fillStyle = "green";
+          ctx.fill();
+          if (x >= 900){
+            droite = 0;
+            gauche = 0;
+            c.width = c.width;
+            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.fillStyle = "green";
+            ctx.fill();
+          };
+        });
+
+
+    };
+
+  </script>
+</body>
+</html>

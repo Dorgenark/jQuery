@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-2.2.4.js"></script>
+  <title>Exercice 1</title>
+
+</head>
+<body>
+  <div>
+      <button id="btn1">1</button>
+      <button id="btn2">2</button>
+      <button id="btn3">3</button>
+      <button id="btn4">4</button>
+      <button id="btn5">5</button>
+  </div>
+  <div>
+      <canvas style="margin-left: 80px;margin-top: 50px;" id="mon_canvas" width="400" height="400"><p>Canvas isn't supported</p></canvas>
+  </div>
+
+
+
+  <script type="text/javascript">
+
+  window.onload = function() {
+    var c = document.getElementById('mon_canvas');
+        if(!c) {
+            alert("Impossible de récupérer le canvas");
+            return;}
+    var ctx = c.getContext('2d');
+        if(!ctx) {
+            alert("Impossible de récupérer le context du canvas");
+            return;}
+
+
+    ctx.rect(20,10,20,10);
+    ctx.fill();
+
+    var i = 1;
+
+    $("#btn1").click(function(){
+      if (i <= 10) {i++;
+      ctx.rect(20,10,20,10*i);
+      ctx.fill();
+    } else {
+      i = 1;
+      c.width = c.width;
+      ctx.rect(20,10,20,10);
+      ctx.fill();
+    };
+    });
+
+
+    $("#btn2").click(function(){
+      ctx.fillStyle = "green";
+      ctx.fill();
+    });
+
+    $("#btn3").click(function(){
+      ctx.fillStyle = "black";
+      ctx.fill();
+    });
+
+    $("#btn4").click(function(){$("#mon_canvas").hide()});
+
+    $("#btn5").click(function(){$("#mon_canvas").show()});
+  }
+
+  </script>
+</body>
+</html>
