@@ -39,14 +39,14 @@
         $("#haut").click(function(){
           haut++;
           c.width = c.width;
-          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.rect(0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
           ctx.fillStyle = "green";
           ctx.fill();
           if (y < 0){
             haut = 0;
             bas = 11;
             c.width = c.width;
-            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.rect(0-(50*gauche)+(50*droite),0-(50*haut)+(50*bas),50,50);
             ctx.fillStyle = "green";
             ctx.fill();
           };
@@ -55,14 +55,14 @@
         $("#bas").click(function(){
           bas++;
           c.width = c.width;
-          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.rect(0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
           ctx.fillStyle = "green";
           ctx.fill();
           if (y >= 600){
             haut = 0;
             bas = 0;
             c.width = c.width;
-            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.rect(0-(50*gauche)+(50*droite),0-(50*haut)+(50*bas),50,50);
             ctx.fillStyle = "green";
             ctx.fill();
           };
@@ -71,14 +71,14 @@
         $("#gauche").click(function(){
           gauche++;
           c.width = c.width;
-          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.rect(x = 0-(50*gauche)+(50*droite),0-(50*haut)+(50*bas),50,50);
           ctx.fillStyle = "green";
           ctx.fill();
           if (x < 0){
             gauche = 0;
             droite = 17;
             c.width = c.width;
-            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.rect(0-(50*gauche)+(50*droite),0-(50*haut)+(50*bas),50,50);
             ctx.fillStyle = "green";
             ctx.fill();
           };
@@ -87,14 +87,14 @@
         $("#droite").click(function(){
           droite++;
           c.width = c.width;
-          ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+          ctx.rect(x = 0-(50*gauche)+(50*droite),0-(50*haut)+(50*bas),50,50);
           ctx.fillStyle = "green";
           ctx.fill();
           if (x >= 900){
             droite = 0;
             gauche = 0;
             c.width = c.width;
-            ctx.rect(x = 0-(50*gauche)+(50*droite),y = 0-(50*haut)+(50*bas),50,50);
+            ctx.rect(0-(50*gauche)+(50*droite),0-(50*haut)+(50*bas),50,50);
             ctx.fillStyle = "green";
             ctx.fill();
           };

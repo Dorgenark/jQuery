@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-2.2.4.js"></script>
+  <title>Exercice 1</title>
+
+</head>
+<body>
+<div align="center">
+  <button id="generate">Shifumi !</button>
+  <input id="random_value" type="hidden">
+  <div id="guess_section" style="display:none;"><br />
+    <span>pierre / feuille / ciseaux ?</span><br />
+    <span>ᐁ écrivez votre choix :</span><br/>
+      <input id="user_input" type="text"></input>
+      <button id="compare">Confirmer !</button>
+  </div>
+  <p id="result"></p>
+  </div>
+
+
+
+  <script type="text/javascript">
+
+  var words = ["pierre", "papier", "ciseaux"];
+
+
+  $("#generate").click(function() {
+  $("#random_value").val(words[Math.floor(Math.random()*words.length)]);
+  $("#guess_section").css("display", "");
+  });
+
+  // $("#compare").click(function(){
+  //   if (parseInt($("#user_input").val()) === txt("pierre")){
+  //     if ($("#random_value").val()) === txt("pierre")){
+  //       $("#result").html("pierre Vs pierre, personne ne gagne :|");
+  //     } else if ($("#random_value").val()) === txt("feuille")){
+  //       $("#result").html("pierre Vs feuille, perdu :<");
+  //     } else if ($("#random_value").val()) === txt("ciseaux")){
+  //       $("#result").html("pierre Vs ciseaux, perdu :>");
+  //   }
+  //   }
+  // });
+
+  </script>
+</body>
+</html>
